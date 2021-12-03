@@ -3,7 +3,7 @@
 const customResponse = (code,message,dataName,data) => {
     return {
         code,
-        message,
+        msg:message,
         [dataName]:data
     }
 }
