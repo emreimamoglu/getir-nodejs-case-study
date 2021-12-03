@@ -1,5 +1,6 @@
 const Record = require("../models/record.model");
 
+//Will get the records using the filter data passed from the controller
 const getRecords = async (requestBody) => {
   const startDate = new Date(requestBody.startDate);
   const endDate = new Date(requestBody.endDate);
