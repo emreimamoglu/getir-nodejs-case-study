@@ -61,3 +61,8 @@ To run this project, you will need to add the following environment variables to
 ## Test Output Documentation
 
 ```After running tests, jest creates a file to visualize the test result it can be found at /coverage/lcov-report/index.html. The html file contains formatted and visualized test results.```
+
+
+## Demo
+
+http://34.219.181.154:3000/api/records
