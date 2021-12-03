@@ -43,8 +43,8 @@ npm run test
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `startDate` | `Date` | `Date should be in YYYY-MM-DD format` |
-  `endDate` | `Date`|`Date should be in YYYY-MM-DD format`
+| `startDate` | `String` | `Date should be in YYYY-MM-DD format` |
+  `endDate` | `String`|`Date should be in YYYY-MM-DD format`
   `minCount`|`Number`| `Minimum count wanted for filtering`
   `maxCount`|`Number`| `Maximum number wanted for filtering`
 
