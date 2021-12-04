@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "test": "jest --coverage",
-        "start": "node src/app.js",
+        "start": "pm2 start pm2.config.json --no-daemon",
         "dev": "nodemon src/app.js"
     },
     "author": "",
@@ -17,6 +17,7 @@
         "express-validation": "^3.0.8",
         "http-status": "^1.5.0",
         "mongoose": "^6.0.14",
+        "pm2": "^5.1.2",
         "winston": "^3.3.3"
     },
     "devDependencies": {

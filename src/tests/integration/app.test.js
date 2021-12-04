@@ -30,7 +30,7 @@ describe("Test the records path", () => {
       .then((response) => {
         expect(response.statusCode).toBe(400);
         expect(response.body.code).toBe(400);
-        expect(response.body.details).toBeDefined(); 
+        expect(response.body.details).toBeDefined();
         done();
       });
   });
@@ -63,7 +63,7 @@ describe("Test the records path", () => {
       .then((response) => {
         expect(response.statusCode).toBe(400);
         expect(response.body.code).toBe(400);
-        expect(response.body.details).toBeDefined(); 
+        expect(response.body.details).toBeDefined();
         done();
       });
   });
@@ -79,51 +79,49 @@ describe("Test the records path", () => {
       .then((response) => {
         expect(response.statusCode).toBe(400);
         expect(response.body.code).toBe(400);
-        expect(response.body.details).toBeDefined(); 
+        expect(response.body.details).toBeDefined();
         done();
       });
   });
 });
 
-describe("Test some paths that does not exist",()=>{
+describe("Test some paths that does not exist", () => {
+  test("Send a POST request to /api/datas that does not exist", (done) => {
+    request(app)
+      .post("/api/datas")
+      .send({
+        startDate: "2016-02-02",
+        endDate: "26.09.2021",
+        minCount: 1200,
+        maxCount: 3000,
+      })
+      .then((response) => {
+        expect(response.statusCode).toBe(404);
+        expect(response.body.code).toBe(404);
+        expect(response.body.details).toBeDefined();
+        done();
+      });
+  });
 
-    test("Send a POST request to /api/datas that does not exist",(done)=>{
-        request(app)
-        .post("/api/datas")
-        .send({
-          startDate: "2016-02-02",
-          endDate: "26.09.2021",
-          minCount: 1200,
-          maxCount: 3000,
-        })
-        .then((response) => {
-          expect(response.statusCode).toBe(404);
-          expect(response.body.code).toBe(404);
-          expect(response.body.details).toBeDefined(); 
-          done();
-        });
-    })
+  test("Send a GET request to /location that does not exist", (done) => {
+    request(app)
+      .get("/location")
+      .then((response) => {
+        expect(response.statusCode).toBe(404);
+        expect(response.body.code).toBe(404);
+        expect(response.body.details).toBeDefined();
+        done();
+      });
+  });
 
-    test("Send a GET request to /location that does not exist",(done)=>{
-        request(app)
-        .get("/location")
-        .then((response) => {
-          expect(response.statusCode).toBe(404);
-          expect(response.body.code).toBe(404);
-          expect(response.body.details).toBeDefined(); 
-          done();
-        });
-    })
-
-    test("Send a GET request to /getir that does not exist",(done)=>{
-        request(app)
-        .get("/location")
-        .then((response) => {
-          expect(response.statusCode).toBe(404);
-          expect(response.body.code).toBe(404);
-          expect(response.body.details).toBeDefined(); 
-          done();
-        });
-    })
-
-})
+  test("Send a GET request to /getir that does not exist", (done) => {
+    request(app)
+      .get("/location")
+      .then((response) => {
+        expect(response.statusCode).toBe(404);
+        expect(response.body.code).toBe(404);
+        expect(response.body.details).toBeDefined();
+        done();
+      });
+  });
+});
